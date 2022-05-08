@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Expression Parser</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { equationNumbers: { autoNumber: "AMS" } },
+        displayAlign: "center"
+      });
+
+      MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+    </script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+    ></script>
+    <script src="expression.js"></script>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        height: 100vh;
+        font-family: 'Roboto', sans-serif;
+        background-color: cornsilk;
+        display: flex;
+        flex-direction: column;
+      }
+      .container {
+        background-color: black;
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        color: white;
+        justify-content: center;
+        margin: auto;
+        margin-top: 0px;
+        padding: 50px;
+        font-size: 20px;
+        border-radius: 12px;
+        box-shadow:  5px 5px 5px rgba(0, 0, 0, 0.627);
+        text-align: center;
+      }
+      .footer {
+        background-color: black;
+        text-align: center;
+        color: white;
+        padding: 12px;
+        margin: 20px;
+        
+      }
+      #ParseButton {
+        margin: 0px auto 10px auto;
+        width: 40%;
+        padding:10px;
+        font-size: 20px;
+        text-transform: uppercase;
+        background-color: orange;
+        color: white;
+        border-radius: 24px;
+        border: none;
+        font-weight: 500;
+        
+      }
+      .input-ex{
+          padding:10px;
+          font-size: 20px;
+          text-align: center;
+          border:none;
+          outline: none;
+          margin:18px 0 36px 0;
+      }
+      #ParseButton:hover {
+        background-color: white;
+        color: black;
+        border-radius: 24px;
+        border: none;        
+      }
+      .title{
+          text-align: center;
+          text-transform: uppercase;
+          font-size: 32px;
+          color: aquamarine;
+          margin-bottom: 0px;
+      }
+      .PrettyPrint{
+        text-align: center;
+        position: static;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <p class="title">Expression Parser</p>
+        <p>
+        Enter the desired expression consisting of variables, parentheses, the operators
+        <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>,
+        <code>^</code>, and the functions <code>sin</code>, <code>cos</code>,
+        <code>sqrt</code>, and <code>abs</code>.
+      </p>
+
+      <p>
+        Get your expression converted into simple math format by clicking the Parse Button below
+      </p>
+
+        <input class="input-ex" type="text" id="ExpressionText" size="50" placeholder="Enter the Expression" />
+      <input type="button" value="Parse" id="ParseButton" />
+      <div id="ParseError" style="color: red"></div>
+      <div id="PrettyPrint"></div>
+      
+    </div>
+    <p class="footer" style="text-align: center">
+      Made by Praveen Kumar and Prateek Ravi
+    </p>
+  </body>
+</html>
